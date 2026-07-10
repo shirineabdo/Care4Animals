@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Button } from 'reactstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import heroImage from "./assets/care4animals.png";
 
 
 function App() {
@@ -92,12 +93,23 @@ function App() {
             <div className='step'>
               <div className='step-number'>01</div>
               <h3>Create a Report</h3>
-              <p>Owners or rescuers report a lost/found pet information including photos, location, breed and description.</p>
+              <p>Owners or rescuers report lost/found or emergency case rescue pet information including photos, location, 
+                breed and description.</p>
             </div>
             <div className='step'>
               <div className='step-number'>02</div>
-              <h3>Create a Report</h3>
-              <p>Owners or rescuers report a lost/found pet information including photos, location, breed and description.</p>
+              <h3>...</h3>
+              <p>....</p>
+            </div>
+            <div className='step'>
+              <div className='step-number'>03</div>
+              <h3>Community Helps</h3>
+              <p>Users browse reports, share information and contact owners when they recognize the pet.</p>
+            </div>
+            <div className='step'>
+              <div className='step-number'>04</div>
+              <h3>Pet ...</h3>
+              <p>......</p>
             </div>
             
           </div>

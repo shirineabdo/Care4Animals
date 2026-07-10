@@ -90,9 +90,9 @@ img {
    ============================================= */
 .green-btn {
   display: inline-block;
-  background-color: #09b355;
+  background-color: #06a14c80;
   color: white;
-  padding: 12px 28px;
+  padding: 12px 12px;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 600;
@@ -105,7 +105,7 @@ img {
 .outline-btn {
   background: transparent;
   color: transparent;
-  padding: 12px 28px;
+  padding: 12px 10px;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 600;
@@ -128,7 +128,7 @@ img {
 }
 
 .green-btn:hover {
-  background-color: #08b85a;
+  background-color: #06a14c80;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(13, 253, 121, 0.35);
 }
@@ -186,8 +186,8 @@ img {
   display: flex;
   align-items: center;
   background:
-    linear-gradient(rgba(10, 20, 60, 0.62), rgba(10, 20, 60, 0.62)),
-    url("images/background.jpeg") center / cover no-repeat;
+    linear-gradient(rgba(10, 20, 60, 0.50), rgba(10, 20, 60, 0.50)),
+    url("./assets/care4animals.png") center / cover no-repeat;
   color: var(--white);
   padding: 80px 48px;
 }
