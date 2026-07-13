@@ -1,0 +1,38 @@
+.navbar{
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 85px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+.nav-logo{
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--blue);
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo-img{
+    height: 85px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+

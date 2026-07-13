@@ -1,6 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Header from './Header';
+import Footer from './Footer';
+
 import React from 'react';
 import { Button } from 'reactstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -10,6 +13,7 @@ import heroImage from "./assets/care4animals.png";
 function App() {
   return (
     <>
+    <Header />
     {/*hero*/}
       <section className="hero">
         <div className="hero-inner">
@@ -74,7 +78,7 @@ function App() {
                 ></i>
               </div>
 
-              <h3>Animal Support</h3>
+              <h3>Emergency Rescue</h3>
 
               <p>
                 Help abandoned, injured, or rescued animals by connecting them with volunteers and shelters.
@@ -116,10 +120,9 @@ function App() {
         </div>
       </section>
 
-      {/*footer*/}
-      <footer className='footer'>
-        <p>© 2026 Care4Animals Platform - Helping every pet find its way home.</p>
-      </footer>
+      <Footer />
+
+      
     </>
   );
 }
