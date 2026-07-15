@@ -36,3 +36,25 @@
     gap: 8px;
 }
 
+.nav-links a {
+    padding:8px;
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size:17px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color:var(--green);
+    background-color: var(--blue-light);
+}
+
+/* BUTTON */
+.report-btn {
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:25px;
+    cursor:pointer;
+}
