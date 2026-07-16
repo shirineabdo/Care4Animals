@@ -83,37 +83,78 @@ function Home({openLogin}) {
         </div>
       </section>
 
-      {/*how it works*/}
-      <section className='how-it-works'>
-        <div className='container'>
-          <h2>How It Works</h2>
-          <p className='section-sub'>Simple, transparent, and fast.</p>
-          <div className='steps-grid'>
-            <div className='step'>
-              <div className='step-number'>01</div>
-              <h3>Create a Report</h3>
-              <p>Owners or rescuers report lost/found or emergency case rescue pet information including photos, location, 
-                breed and description.</p>
-            </div>
-            <div className='step'>
-              <div className='step-number'>02</div>
-              <h3>...</h3>
-              <p>....</p>
-            </div>
-            <div className='step'>
-              <div className='step-number'>03</div>
-              <h3>Community Helps</h3>
-              <p>Users browse reports, share information and contact owners when they recognize the pet.</p>
-            </div>
-            <div className='step'>
-              <div className='step-number'>04</div>
-              <h3>Pet ...</h3>
-              <p>......</p>
+     <section className="recent-pets">
+      <div className="container section-header">
+      <h2>Recently Lost Pets</h2>
+      <button className="green-btn" onClick={() => navigate("/lost")} > View All </button>
+      </div>
+      <div className="pet-preview-grid">
+        <div className="pet-card">
+          <img src="pet-image.jpg" alt="lost pet"/>
+          <h3>Max</h3>
+          <p>Golden Retriever</p>
+          <p>📍 Beirut</p>
+          </div>
+          
+          <div className="pet-card">
+            <h3>Luna</h3>
+            <p>Cat</p>
+            <p>📍 Jounieh</p>
             </div>
             
-          </div>
         </div>
-      </section>
+    </section>
+
+    <section className="recent-pets">
+
+
+<div className="container">
+
+<h2>Recently Found Pets</h2>
+
+
+<button
+className="green-btn"
+onClick={() => navigate("/found")}
+>
+View All 
+</button>
+
+
+</div>
+
+
+
+<div className="pet-preview-grid">
+
+
+<div className="pet-card">
+
+<h3>Rocky</h3>
+
+<p>Dog</p>
+
+<p>📍 Tripoli</p>
+
+</div>
+
+
+
+<div className="pet-card">
+
+<h3>Milo</h3>
+
+<p>Cat</p>
+
+<p>📍 Beirut</p>
+
+</div>
+
+
+</div>
+
+
+</section>
 </>
     );
 }
