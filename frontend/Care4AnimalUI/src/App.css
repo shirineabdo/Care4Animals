@@ -4,8 +4,8 @@
    ============================================= */
 
 :root {
-  --green: #078d43;
-  --green-dark: #08b85a;
+  --green: #2E7D32;
+  --green-dark: #1B5E20;
   --blue-light: #e8f0fe;
 
   --text: #1a1a2e;
@@ -115,6 +115,21 @@ img {
   transition: 0.3s;
 }
 
+.urgency-btn {
+  display: inline-block;
+  background-color: #b13535;
+  color: white;
+  padding: 12px 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+
+}
+
 
 .btn-sm {
   padding: 8px 16px;
@@ -131,6 +146,12 @@ img {
   background-color: #06a14c80;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(13, 253, 121, 0.35);
+}
+
+.urgency-btn:hover {
+  background-color: #c23b3b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(122, 32, 32, 0.4);
 }
 
 .outline-btn {

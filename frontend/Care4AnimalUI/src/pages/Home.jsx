@@ -1,17 +1,23 @@
-function Home() {
+import { useNavigate } from "react-router-dom";
+
+function Home({openLogin}) {
+  const navigate = useNavigate();
+
     return (
-       <>
+       <> 
        {/*hero*/}
       <section className="hero">
         <div className="hero-inner">
           <span className="hero-tag">Every animal. Every story. Every chance matters.</span> <br/><br/>
           <h1>Together, we can give every pet a second chance.</h1>
-          <p> A platform connecting pet owners, rescuers, and animal lovers to reunite lost pets and support animals in need. </p>
+          <p> Helping lost, abandoned or injured animals by connecting them with people who care. </p>
           <br/>
           <div className="hero-actions">
-         <button className="green-btn">  Report a Pet </button>
+
+          <button className="outline-btn" onClick={()=>navigate("/pets")}> Browse Lost & Found Pets </button>
+         <button className="green-btn" onClick={openLogin}> Report a Pet </button>
          
-         <button className="outline-btn">  Report Emergency Resuce </button>
+         <button className="urgency-btn" onClick={openLogin}> Report Emergency Resuce </button>
          </div>
         </div> 
         <div className='hero-overlay'></div>
@@ -35,29 +41,14 @@ function Home() {
                 ></i>
               </div>
 
-              <h3>Lost Pets</h3>
+              <h3>Report Pets</h3>
 
               <p>
-                Report missing pets with details, pictures, location, and contact information to increase the chance of finding them.
+                Report lost or found pets in your area.
               </p>
             </div>
 
-            <div className="category-card">
-              <div className="category-icon">
-                <i
-                  className="bi bi-heart"
-                  style={{ color: "var(--heart-icon)" }}
-                ></i>
-              </div>
-
-              <h3>Found Pets</h3>
-
-              <p>
-                Share information about animals you found and help owners safely recover their pets.
-              </p>
-            </div>
-
-            <div className="category-card">
+             <div className="category-card">
               <div className="category-icon">
                 <i
                   className="bi bi-person-heart"
@@ -71,6 +62,23 @@ function Home() {
                 Help abandoned, injured, or rescued animals by connecting them with volunteers and shelters.
               </p>
             </div>
+
+            <div className="category-card">
+              <div className="category-icon">
+                <i
+                  className="bi bi-people-fill"
+                  style={{ color: "var(--heart-icon)" }}
+                ></i>
+              </div>
+
+              <h3>Spread Love</h3>
+
+              <p>
+                Share posts and help reunite pets.
+              </p>
+            </div>
+
+           
           </div>
         </div>
       </section>

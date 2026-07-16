@@ -11,6 +11,7 @@ import {
 import "./LoginModal.css";
 
 function LoginModal({ isOpen, toggle, openRegister }) {
+  
   return (
     <Modal isOpen={isOpen} toggle={toggle} centered>
 
