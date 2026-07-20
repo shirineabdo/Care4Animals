@@ -1,0 +1,12 @@
+.footer{
+    background:#124b29;
+    color: rgba(255, 255, 255, 0.76);
+  text-align: center;
+  padding: 28px;
+  font-size: 15px;
+  margin-top: auto;
+}
+
+
+
+@media(max-width:700px){.footer-main{grid-template-columns:1fr 1fr}}

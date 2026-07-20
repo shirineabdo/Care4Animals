@@ -1,0 +1,138 @@
+:root{
+    --green:#26753b;
+    --green-dark:#124b29;
+    --text:#171a18;
+    --text-muted:#6b746d;
+    --bg:#f8faf8;
+    --white:#fff;
+    --border:#e5e9e4;
+    --urgent:#e34d43;
+    --radius:8px;
+    --font-display:"Plus Jakarta Sans",Arial,sans-serif;
+    --font-body:"Plus Jakarta Sans",Arial,sans-serif;
+
+    /*how you can help*/
+  --heart-bg:     #fbf0f0;
+  --heart-border: #f0b8b8;
+  --heart-text:   #b13535;
+  --heart-icon:   #cf4444;
+
+  --support-bg:     #e8f4fd;
+  --support-border: #9ccfee;
+  --support-text:   #1565a8;
+  --support-icon:   #2186c6;
+}
+
+*{
+    box-sizing:border-box
+}
+
+html{
+    scroll-behavior:smooth
+}
+
+body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5
+}
+
+a{
+    text-decoration:none;
+    color:inherit
+}
+
+button{
+    font-family:inherit
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: left;
+}
+
+section {
+  padding: 80px 0;
+}
+
+section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 17px;
+  margin-bottom: 48px;
+}
+
+.outline-btn {
+  background: transparent;
+  padding: 12px 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+
+.outline-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(125, 128, 126, 0.35);
+}
+
+.green-btn {
+  display: inline-block;
+  background-color: #06a14c80;
+  color: white;
+  padding: 12px 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+
+.green-btn:hover {
+  background-color: #06a14c80;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 253, 121, 0.35);
+}
+
+.urgency-btn {
+  display: inline-block;
+  background-color: #b13535;
+  color: white;
+  padding: 12px 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+
+}
+
+.urgency-btn:hover {
+  background-color: #c23b3b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(122, 32, 32, 0.4);
+}

@@ -1,0 +1,216 @@
+.hero{
+    position:relative;
+    min-height:88vh;
+    overflow:hidden;
+    background:linear-gradient(rgba(10, 20, 60, 0.50), rgba(10, 20, 60, 0.50)),
+    url("../assets/care4animals.png") center / cover no-repeat;;
+    display:flex;
+    align-items:center;
+    padding:80px 48px;;
+    color:#ffffff
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.hero-inner{
+    position:relative;
+    z-index:1;
+    max-width:680px;
+    text-align: left;
+}
+
+.hero-inner p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap
+}
+
+.hero-pets{
+    position:absolute;
+    right:5%;
+    bottom:0;
+    width:min(410px,40vw);
+    max-height:390px;
+    object-fit:contain;
+    object-position:bottom;
+    z-index:1
+}
+
+.help-section{
+    background: var(--white);
+}
+
+.help-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.help-card{
+   background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.help-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.help-card i{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 20px;
+  font-size: 60px;
+  margin-bottom: 16px;
+}
+
+.help-card h3{
+   text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.help-card p{
+   color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.recent-section{
+    background:#fafbfa;
+    padding:28px 0 48px
+}
+
+.recent-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:12px
+}
+
+.recent-header h2{
+    font-size:19px;
+    margin:0
+}
+
+.recent-header button{
+    border:0;
+    background:none;
+    color:#26753b;
+    font-size:11px;
+    font-weight:700;
+    cursor:pointer
+}
+
+.pet-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px
+}
+
+.pet-card{
+    background:#fff;
+    border:1px solid #e5e8e4;
+    border-radius:7px;
+    overflow:hidden;
+    box-shadow:0 2px 7px rgba(0,0,0,.05)
+}
+
+.pet-image-placeholder{
+    height:125px;
+    background:linear-gradient(135deg,#dbe8d7,#a7c29f);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,.8);
+    font-size:28px
+}
+
+.pet-card-body{
+    padding:10px 11px
+}
+
+.pet-card h3{
+    font-size:13px;
+    margin:0 0 2px
+}
+
+.pet-card p{
+    font-size:10px;
+    color:#777;
+    margin:0 0 7px
+}
+
+.pet-card small{
+    display:block;
+    font-size:9px;
+    color:#777;
+    margin-top:4px
+}
+
+.pet-card small i{
+    color:#d6534a;
+    margin-right:3px
+}
+
+.found-heading{
+    margin-top:30px
+}
+
+@media(max-width:900px){
+    .hero-pets{opacity:.35;
+        right:-5%;
+        width:55vw
+    }
+    .help-grid,.pet-grid{
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+
+@media(max-width:600px){
+    .hero{
+        padding:40px 22px;
+        min-height:480px
+    }
+    .hero h1{
+        font-size:34px
+    }
+    .hero-pets{
+        width:70vw;
+        right:-15%;
+        opacity:.25
+    }
+    .help-grid,.pet-grid{
+        grid-template-columns:1fr 1fr
+    }
+    .container{
+        padding:0 18px
+    }
+}

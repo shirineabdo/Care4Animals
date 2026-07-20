@@ -1,0 +1,37 @@
+.register-text {
+    text-align:center;
+    margin-top:20px;
+    font-size:14px;
+}
+
+
+.register-text span {
+    color:#2e7d32;
+    cursor:pointer;
+    margin-left:5px;
+    font-weight:bold;
+}
+
+
+.register-text span:hover {
+    text-decoration:underline;
+}
+
+.register-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-link {
+    color: #2e7d32;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.login-link:hover {
+    color: #1b5e20;
+}
