@@ -1,0 +1,196 @@
+.found-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 48px 28px;
+}
+
+.found-header h1 {
+    font-family: var(--font-display);
+    font-size: 34px;
+    margin-bottom: 6px;
+}
+
+.found-header p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+/* ================================
+   FILTER BAR
+================================ */
+
+.found-filters {
+    display: grid;
+    grid-template-columns: 1fr 170px 170px 90px;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+
+/* Search */
+
+.search-box {
+    height: 40px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: #ffffff;
+}
+
+.search-box i {
+    color: #999999;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 12px;
+    color: #333333;
+}
+
+.search-box input::placeholder {
+    color: #999999;
+}
+
+
+/* Select */
+
+.found-filters select {
+    height: 40px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #555555;
+    background: white;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* Filter button */
+
+.filter-btn {
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background: #176b35;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #12572b;
+}
+
+.filter-btn i {
+    margin-right: 5px;
+}
+
+
+
+.pet-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px
+}
+
+.pet-card{
+    background:#fff;
+    border:1px solid #e5e8e4;
+    border-radius:7px;
+    overflow:hidden;
+    box-shadow:0 2px 7px rgba(0,0,0,.05)
+}
+
+.pet-image-placeholder{
+    height:125px;
+    background:linear-gradient(135deg,#dbe8d7,#a7c29f);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,.8);
+    font-size:28px
+}
+
+.pet-card-body{
+    padding:36px 28px
+}
+
+.pet-card h3{
+    
+    margin:0 0 2px
+}
+
+.pet-card p{
+    
+    color:#777;
+    margin:0 0 7px
+}
+
+.pet-card small{
+    display:block;
+    
+    color:#777;
+    margin-top:4px
+}
+
+.pet-card small i{
+    color:#d6534a;
+    margin-right:3px
+}
+
+/* ================================
+   PAGINATION
+================================ */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-top: 25px;
+}
+
+.pagination button {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.page-number {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    color: #555555;
+}
+
+.page-number:hover {
+    border-color: #287a43;
+    color: #287a43;
+}
+
+.page-number.active {
+    background: #287a43;
+    border-color: #287a43;
+    color: white;
+}
+
+.page-arrow {
+    border: 1px solid #dddddd;
+    background: white;
+    color: #777777;
+}
+
+.pagination span {
+    color: #777777;
+    font-size: 12px;
+}

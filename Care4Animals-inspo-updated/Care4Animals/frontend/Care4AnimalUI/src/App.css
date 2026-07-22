@@ -136,3 +136,30 @@ section h2 {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(122, 32, 32, 0.4);
 }
+
+@media(max-width:900px){
+    .nav-links{
+        gap:8px
+    }
+    .nav-links li:nth-child(n+5){
+        display:none
+    }
+    .navbar{
+        padding:0 15px
+    }
+}
+
+@media(max-width:600px){
+    .nav-actions{
+        display:none
+    }
+    .nav-links{
+        gap:7px
+    }
+    .nav-links a{
+        font-size:9px
+    }
+    .nav-logo strong{
+        font-size:12px
+    }
+}

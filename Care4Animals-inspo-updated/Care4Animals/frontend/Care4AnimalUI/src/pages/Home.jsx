@@ -82,10 +82,20 @@ function Home({ openLogin }) {
       {/*recently lost & found*/}
       <section className="recent-section" id="lost-found">
         <div className="container">
-          <div className="recent-header"><h2>Recently Lost Pets</h2><button onClick={() => navigate("/lost")}>View all</button></div>
+          <div className="recent-header">
+            <h2>Recently Lost Pets</h2>
+            <button onClick={() => navigate("/lost")}>View all</button>
+            </div>
+
           <div className="pet-grid">{lostPets.map((pet) => <PetCard key={pet.name} pet={pet} />)}</div>
-          <div className="recent-header found-heading"><h2>Recently Found Pets</h2><button onClick={() => navigate("/found")}>View all</button></div>
+
+          <div className="recent-header found-heading">
+            <h2>Recently Found Pets</h2>
+            <button onClick={() => navigate("/found")}>View all</button>
+            </div>
+
           <div className="pet-grid">{foundPets.map((pet) => <PetCard key={pet.name} pet={pet} />)}</div>
+          
         </div>
       </section>
     </>

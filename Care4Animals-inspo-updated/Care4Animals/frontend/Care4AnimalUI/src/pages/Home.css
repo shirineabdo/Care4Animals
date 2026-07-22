@@ -116,7 +116,7 @@
 }
 
 .recent-header h2{
-    font-size:19px;
+    
     margin:0
 }
 
@@ -124,7 +124,7 @@
     border:0;
     background:none;
     color:#26753b;
-    font-size:11px;
+    
     font-weight:700;
     cursor:pointer
 }
@@ -158,19 +158,19 @@
 }
 
 .pet-card h3{
-    font-size:13px;
+    
     margin:0 0 2px
 }
 
 .pet-card p{
-    font-size:10px;
+    
     color:#777;
     margin:0 0 7px
 }
 
 .pet-card small{
     display:block;
-    font-size:9px;
+    
     color:#777;
     margin-top:4px
 }
