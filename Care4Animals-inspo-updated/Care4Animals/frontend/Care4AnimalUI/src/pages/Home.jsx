@@ -1,20 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./Home.css";
-
-
-const lostPets = [
-  { name: "Luna", breed: "Golden Retriever", location: "Beirut, Ashrafieh", time: "2 hours ago" },
-  { name: "Milo", breed: "Siberian Husky", location: "Jounieh, Keserwan", time: "1 day ago" },
-  { name: "Simba", breed: "Orange Tabby Cat", location: "Tripoli", time: "2 days ago" },
-  { name: "Charlie", breed: "Beagle", location: "Baabda", time: "3 days ago" },
-];
-
-const foundPets = [
-  { name: "Bella", breed: "Mixed Breed", location: "Jdeideh", time: "5 hours ago" },
-  { name: "Tom", breed: "Gray Cat", location: "Dour El Choueir", time: "1 day ago" },
-  { name: "Rocky", breed: "German Shepherd", location: "Aley", time: "2 days ago" },
-  { name: "Lucy", breed: "White Cat", location: "Saida", time: "3 days ago" },
-];
+import { useEffect, useState } from "react";
 
 function PetCard({ pet }) {
   return (
@@ -32,7 +17,46 @@ function PetCard({ pet }) {
 
 function Home({ openLogin }) {
   const navigate = useNavigate();
+  const [lostPets, setLostPets] = useState([]);
+  const [foundPets, setFoundPets] = useState([]);
+
   const scrollToPets = () => document.getElementById("lost-found")?.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+fetch("https://localhost:7010/api/Lost")
+.then((response) => {
+if (!response.ok) {
+throw new Error("Failed to fetch lost pets");
+}
+
+    return response.json();
+  })
+  .then((data) => {
+    console.log("Lost pets from backend:", data);
+    setLostPets(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching lost pets:", error);
+  });
+
+}, []);
+
+useEffect(() => {
+  fetch("https://localhost:7010/api/Found")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch found pets");
+      }
+
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Found pets from backend:", data);
+      setFoundPets(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching found pets:", error);
+    });
+}, []);
 
   return (
     <>
@@ -87,14 +111,58 @@ function Home({ openLogin }) {
             <button onClick={() => navigate("/lost")}>View all</button>
             </div>
 
-          <div className="pet-grid">{lostPets.map((pet) => <PetCard key={pet.name} pet={pet} />)}</div>
+          <div className="pet-grid"> 
+           {lostPets.length === 0 ? (
+  <p>No lost pets found.</p>
+) : (
+  lostPets.map((pet) => (
+    <PetCard
+      key={pet.lostReport_ID}
+      pet={{
+        name: `Pet #${pet.pet_ID}`,
+        breed: "Lost Pet",
+        location: pet.lostReport_LastLocation,
+        time: new Date(
+          pet.lostReport_LostDate
+        ).toLocaleDateString()
+      }}
+    />
+  ))
+)}
+             </div>
 
           <div className="recent-header found-heading">
             <h2>Recently Found Pets</h2>
             <button onClick={() => navigate("/found")}>View all</button>
             </div>
 
-          <div className="pet-grid">{foundPets.map((pet) => <PetCard key={pet.name} pet={pet} />)}</div>
+          <div className="pet-grid">
+
+  {foundPets.length === 0 ? (
+
+    <p>No found pets found.</p>
+
+  ) : (
+
+    foundPets.map((pet) => (
+
+      <PetCard
+        key={pet.foundReport_ID}
+        pet={{
+          name: `Pet #${pet.pet_ID}`,
+          breed: "Found Pet",
+          location: pet.foundReport_Location,
+          time: new Date(
+            pet.foundReport_Date
+          ).toLocaleDateString()
+        }}
+      />
+
+    ))
+
+  )}
+
+</div>
           
         </div>
       </section>

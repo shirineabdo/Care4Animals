@@ -1,17 +1,30 @@
-import "./Found.css";
-
-const foundPets = [
-  { name: "Bella", breed: "Mixed Breed", location: "Jdeideh", time: "5 hours ago" },
-  { name: "Tom", breed: "Gray Cat", location: "Dour El Choueir", time: "1 day ago" },
-  { name: "Rocky", breed: "German Shepherd", location: "Aley", time: "2 days ago" },
-  { name: "Lucy", breed: "White Cat", location: "Saida", time: "3 days ago" },
-];
+import { useState, useEffect } from "react";
 
 function Found(){
+  const [foundPets, setFoundPets] = useState([]);
+
+   useEffect(() => {
+    fetch("https://localhost:7010/api/Found")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch found pets");
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        console.log("All found pets:", data);
+        setFoundPets(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching found pets:", error);
+      });
+  }, []);
+
     return(
         <>
-        <div className="found-header">
-            <h3>Found Pets</h3>
+        <div className="lostfound-header">
+            <h1>Found Pets</h1>
             <p>Browse found pets in your area and help reunite them find their way home.</p>
             {/*search and filter*/}
       <div className="lost-filters">
@@ -45,28 +58,54 @@ function Found(){
       </div>
 
       <div className="pet-grid">
-        {foundPets.map((pet) => (
-          <article className="pet-card" key={pet.name}>
-            <div className="pet-image-placeholder">
-              <i className="bi bi-heart"></i>
-            </div>
+             {foundPets.length === 0 ? (
 
-            <div className="pet-card-body">
-              <h3>{pet.name}</h3>
-              <p>{pet.breed}</p>
+          <p>No found pets found.</p>
 
-              <small>
-                <i className="bi bi-geo-alt-fill"></i>
-                {pet.location}
-              </small>
+        ) : (
 
-              <small>
-                <i className="bi bi-clock"></i>
-                {pet.time}
-              </small>
-            </div>
-          </article>
-        ))}
+          foundPets.map((pet) => (
+
+            <article
+              className="pet-card"
+              key={pet.foundReport_ID}
+            >
+
+              <div className="pet-image-placeholder">
+                <i className="bi bi-heart"></i>
+              </div>
+
+              <div className="pet-card-body">
+
+                <h3>
+                  Pet #{pet.pet_ID}
+                </h3>
+
+                <p>
+                  Found Pet
+                </p>
+
+                <small>
+                  <i className="bi bi-geo-alt-fill"></i>
+                  {" "}
+                  {pet.foundReport_Location}
+                </small>
+
+                <small>
+                  <i className="bi bi-clock"></i>
+                  {" "}
+                  {new Date(
+                    pet.foundReport_Date
+                  ).toLocaleDateString()}
+                </small>
+
+              </div>
+
+            </article>
+
+          ))
+
+        )}
         </div>
 
         {/* Pagination */}
@@ -80,9 +119,7 @@ function Found(){
         <button className="page-number">2</button>
         <button className="page-number">3</button>
 
-        <span>...</span>
-
-        <button className="page-number">8</button>
+       
 
         <button className="page-arrow">
           <i className="bi bi-chevron-right"></i>

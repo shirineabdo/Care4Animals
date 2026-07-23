@@ -24,6 +24,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import heroImage from "./assets/care4animals.png";
 
 
+
 function App() {
   const [loginOpen, setLoginOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
